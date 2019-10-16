@@ -39,7 +39,9 @@ const start = async () => {
         return error;
       })
       .then(info => {
-        wikiData.push(info)
+        let mergedData = info;
+        mergedData['billboard_rankings'] = artist.rankings;
+        wikiData.push(mergedData)
         // console.log(info)
       })
   });
